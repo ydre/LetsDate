@@ -32,6 +32,7 @@ namespace API
                     Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddCors();
             services.AddSwaggerGen();
             services.AddControllers();
         }
@@ -52,6 +53,8 @@ namespace API
             });
 
             app.UseRouting();
+
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthorization();
 
