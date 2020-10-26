@@ -20,7 +20,7 @@ namespace API.Extensions
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                                                .GetBytes(config.GetSection("AppSettings:TokenKey").Value)),
+                                                .GetBytes(config.GetSection("TokenKey").Value)),
                         ValidateIssuer = false,
                         ValidateAudience = false,
                     };
